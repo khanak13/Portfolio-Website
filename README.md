@@ -4,7 +4,7 @@ Static portfolio site: plain HTML, CSS and JS, no build step.
 
 - `index.html` — home (desktop-style widgets, projects, about, contact)
 - `case-study.html?project=focus|cashfree|yellow|adobe` — project pages
-- `playground.html` — draggable board with the ask-khanak terminal and visitor sticky notes (kept in `sessionStorage`, cleared when the tab closes)
+- `playground.html` — endless pannable board with the ask-khanak terminal and unlimited visitor sticky notes you can move and delete (kept in `sessionStorage`, cleared when the tab closes)
 
 ## Run locally
 
