@@ -345,7 +345,7 @@
 .term-chips button:hover,.term-chips button:focus-visible{border-color:#42d76b;color:#42d76b;outline:none}
 .term-form{display:flex;align-items:center;gap:8px;padding:10px 16px;border-top:1px solid #ffffff14}
 .term-form label{color:#42d76b;white-space:nowrap}
-.term-form input{flex:1;min-width:0;border:0;background:transparent;color:#eee;font:inherit;outline:none;caret-color:#42d76b}
+.term-form input{-webkit-user-select:text;user-select:text;flex:1;min-width:0;border:0;background:transparent;color:#eee;font:inherit;outline:none;caret-color:#42d76b}
 .term-form input::placeholder{color:#5d5e66}
 .term-form button{border:0;background:#ffffff12;color:#ccc;border-radius:5px;padding:3px 8px;font:inherit;cursor:pointer}
 .pg-toolbar{position:absolute;z-index:6;left:50%;bottom:34px;transform:translateX(-50%);display:flex;gap:10px}
@@ -371,7 +371,7 @@
 .pg-sticky:hover .pg-sticky-delete,.pg-sticky:focus-within .pg-sticky-delete,.pg-sticky-delete:focus-visible{opacity:1}
 .pg-sticky-delete:hover{background:rgba(0,0,0,.16)}
 @media(hover:none){.pg-sticky-delete{opacity:1}}
-.pg-sticky textarea{flex:1;width:100%;padding:0 14px 14px;border:0;resize:none;background:transparent;color:#2b2716;font:600 13px/1.45 -apple-system,BlinkMacSystemFont,Inter,sans-serif;outline:none}
+.pg-sticky textarea{-webkit-user-select:text;user-select:text;cursor:text;flex:1;width:100%;padding:0 14px 14px;border:0;resize:none;background:transparent;color:#2b2716;font:600 13px/1.45 -apple-system,BlinkMacSystemFont,Inter,sans-serif;outline:none}
 .pg-sticky textarea::placeholder{color:rgba(43,39,22,.45)}
 .pg-sticky:focus-within{box-shadow:0 0 0 2px #0a64d8,0 16px 32px rgba(20,20,20,.18)}
 .pg-sticky.is-leaving{animation:stickyOut .22s ease-in forwards;pointer-events:none}
