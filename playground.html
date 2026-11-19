@@ -148,7 +148,8 @@
 
       let drag = null;
       handle.addEventListener('pointerdown', event => {
-        if (event.button !== 0) return;
+        // The × lives inside the handle; capturing its pointer would steal the click.
+        if (event.button !== 0 || event.target.closest('.pg-sticky-delete')) return;
         event.preventDefault();
         bringToFront(el, note);
         drag = { x: event.clientX - note.x, y: event.clientY - note.y };
