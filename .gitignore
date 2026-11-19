@@ -1,0 +1,12 @@
+# secrets — never commit
+.env
+.env.*
+!.env.example
+
+.DS_Store
+.claude/
+outputs/
+work/
+# originals; the site uses the web-sized copies
+assets/khanak-eyes.heic
+assets/khanak-dance.mp4

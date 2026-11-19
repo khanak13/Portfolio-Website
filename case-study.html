@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case study — Khanak Jain</title>
+  <meta name="description" content="Product case study by Khanak Jain.">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=6" />
+</head>
+<body class="cs-page">
+  <nav class="cs-nav" aria-label="Case study">
+    <a href="index.html#work" class="cs-back">‹ Work</a>
+    <span class="cs-nav-title" id="navTitle">Case study</span>
+    <a href="https://cal.com/khanak-jain" target="_blank" rel="noreferrer" class="cs-nav-cta">Let's talk</a>
+  </nav>
+
+  <main id="cs" class="cs-main"></main>
+
+  <footer class="cs-footer">
+    <a href="index.html">Khanak Jain</a>
+    <span><a href="https://www.linkedin.com/in/khanak--jain" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="mailto:khanakj12@gmail.com">khanakj12@gmail.com</a></span>
+  </footer>
+
+  <script>
+    // All copy lives here; numbers in `metrics` are [big value, label].
+    const cases = {
+      focus: {
+        tone: 'violet', kicker: 'Product Discovery · Google Vibe2Ship Hackathon', title: 'Focus',
+        tagline: 'Close the gap between planning and doing.',
+        intro: 'A productivity tracker MVP built around the real reason people miss important work: the intention gap between planning and doing.',
+        metrics: [['500+', 'user and market responses'], ['10+', 'tools benchmarked'], ['≈35%', 'better task completion in testing']],
+        challengeHead: 'Another task manager was not the answer.',
+        challenge: 'I started by understanding how people plan, postpone, and recover from unfinished work. The goal was not to add another noisy to-do list, but a calmer system that helps people finish what matters most.',
+        steps: [
+          ['Listen', 'Collected 500+ user and market responses to find recurring behaviours and pain points.'],
+          ['Benchmark', 'Compared 10+ productivity tools on functionality, engagement, and monetisation.'],
+          ['Decide', 'Turned research into 8 product hypotheses and prioritised the roadmap by impact, effort, and business value.']
+        ],
+        outcomeHead: 'About 35% better task completion.',
+        outcome: 'In user testing the MVP improved task-completion efficiency by roughly 35%. Its north-star metric: on-time completion of high-priority tasks.',
+        visual: `<div class="v-phone"><div class="v-screen">
+          <p class="v-h">Today</p>
+          <div class="v-task done"><i></i><span>Finish PRD draft</span><em>High</em></div>
+          <div class="v-task done"><i></i><span>User interview #12</span><em>High</em></div>
+          <div class="v-task"><i></i><span>Prioritise with RICE</span><em>Med</em></div>
+          <div class="v-task"><i></i><span>Share MVP scope</span><em>Low</em></div>
+          <div class="v-ring"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15.5"/><circle class="v-ring-fill" cx="18" cy="18" r="15.5" pathLength="100" stroke-dasharray="72 100"/></svg><b>72%</b><small>on time</small></div>
+        </div></div>`
+      },
+      cashfree: {
+        tone: 'green', kicker: 'Product Analytics · Cashfree Payments', title: 'Checkout',
+        tagline: 'Clearer, faster, easier to trust.',
+        intro: 'Improving a payment journey by connecting behavioural data, merchant pain points, and clear product requirements.',
+        metrics: [['21K', 'checkout journeys analysed'], ['130+', 'support and product tickets'], ['+3.6%', 'checkout conversion']],
+        challengeHead: 'Drop-offs were hiding in plain sight.',
+        challenge: 'As a Product Intern on Checkout, I studied where users and merchants struggled across the payment flow, combining funnel analysis with the signals hidden in support and product tickets.',
+        steps: [
+          ['Measure', 'Analysed about 21,000 checkout journeys across funnel stages, payment methods, devices, and browsers.'],
+          ['Group', 'Investigated 130+ tickets and grouped recurring pain into 8 major problem areas.'],
+          ['Validate', 'Formed and validated 5 hypotheses with Data & Analytics and Support, then wrote 9 actionable requirements.']
+        ],
+        outcomeHead: '+3.6% checkout conversion.',
+        outcome: 'The analysis contributed to a 3.6% lift in checkout conversion and gave cross-functional teams a clear, evidence-backed roadmap.',
+        visual: `<div class="v-phone"><div class="v-screen">
+          <p class="v-h">Pay ₹1,249</p>
+          <div class="v-pay sel"><i></i><span>UPI</span><em>Recommended</em></div>
+          <div class="v-pay"><i></i><span>Card</span></div>
+          <div class="v-pay"><i></i><span>Netbanking</span></div>
+          <div class="v-btn">Pay securely</div>
+          <div class="v-funnel"><span style="--w:100%"></span><span style="--w:82%"></span><span style="--w:64%"></span><span style="--w:58%"></span></div>
+        </div></div>`
+      },
+      yellow: {
+        tone: 'amber', kicker: 'Product Lead · Yellow.AI TechQuest', title: 'Nexus Loop',
+        tagline: 'Detect. Diagnose. Prescribe. Verify.',
+        intro: 'A closed-loop product for finding, explaining, fixing, and verifying failures in AI-agent deployments.',
+        metrics: [['80K', 'conversations monitored'], ['216', 'behavioural standards mined'], ['55/55', 'final score in under 58s']],
+        challengeHead: 'Too many conversations. Too many tools.',
+        challenge: 'AI-agent teams were working across fragmented tools and huge volumes of conversations and execution steps. I defined the operator persona, jobs to be done, and an MVP built around one loop.',
+        steps: [
+          ['Design the loop', 'Designed the operator workflow for 80K conversations and about 880K execution steps.'],
+          ['Separate signal', 'Used 216 mined standards and cohort analysis to tell real regressions from lookalikes and gaps.'],
+          ['Keep a human in it', 'Added a human-in-the-loop decision layer and tied every fix to replay and golden-set checks.']
+        ],
+        outcomeHead: '3 of 3 found. 3 of 3 fixed.',
+        outcome: 'The system detected 3/3 problems, dismissed 3/3 false alarms, verified 3 fixes, and scored 55/55 in under 58 seconds.',
+        visual: `<div class="v-loop">
+          <div class="v-node" style="--a:0"><b>Detect</b><small>regression found</small></div>
+          <div class="v-node" style="--a:1"><b>Diagnose</b><small>root cause</small></div>
+          <div class="v-node" style="--a:2"><b>Prescribe</b><small>proposed fix</small></div>
+          <div class="v-node" style="--a:3"><b>Verify</b><small>replay passed</small></div>
+          <div class="v-core"><b>55/55</b><small>in &lt;58s</small></div>
+        </div>`
+      },
+      adobe: {
+        tone: 'blue', kicker: 'Inter IIT Tech Meet 14.0 · Adobe', title: 'Photoshop, 2030',
+        tagline: 'A lightweight AI editor that keeps creators in control.',
+        intro: 'A mobile-first AI image-editor concept for 2030 that makes editing faster and more intuitive without taking the creator out of the loop.',
+        metrics: [['12', 'person interdisciplinary team'], ['8', 'solution approaches evaluated'], ['8', 'evaluators on the final panel']],
+        challengeHead: 'What does Photoshop look like on a phone in 2030?',
+        challenge: 'We had to imagine editing that is conversational, context-aware, and energy-efficient on lightweight devices, at the meeting point of design thinking, market research, and AI engineering.',
+        steps: [
+          ['Frame', 'Worked with a 12-member team to structure the industry problem and run user research.'],
+          ['Evaluate', 'Compared 8 solution approaches on feasibility and impact.'],
+          ['Present', 'Built the final prototype and distilled it into a 2-slide pitch for 8 evaluators.']
+        ],
+        outcomeHead: 'AI that shows its work.',
+        outcome: 'The concept centred on human-in-the-loop editing: creators see what the AI changed, refine it, and use light workflows like object removal, relighting, and enhancement.',
+        visual: `<div class="v-phone"><div class="v-screen v-editor">
+          <div class="v-canvas"><span class="v-sun"></span><span class="v-hill"></span><span class="v-sel">Relight</span></div>
+          <div class="v-prompt">“make the sky warmer”</div>
+          <div class="v-tools"><span>Remove</span><span class="on">Relight</span><span>Enhance</span></div>
+        </div></div>`
+      }
+    };
+    const order = Object.keys(cases);
+    const requested = new URLSearchParams(location.search).get('project');
+    const key = Object.hasOwn(cases, requested) ? requested : 'focus';
+    const c = cases[key];
+    const nextKey = order[(order.indexOf(key) + 1) % order.length];
+    const next = cases[nextKey];
+
+    document.title = `${c.title} — Khanak Jain`;
+    document.getElementById('navTitle').textContent = c.title;
+    document.body.dataset.tone = c.tone;
+    // Content is the trusted object above, never URL input, so innerHTML is safe here.
+    document.getElementById('cs').innerHTML = `
+      <header class="cs-hero">
+        <p class="cs-kicker reveal">${c.kicker}</p>
+        <h1 class="reveal">${c.title}</h1>
+        <p class="cs-tagline reveal">${c.tagline}</p>
+        <p class="cs-intro reveal">${c.intro}</p>
+        <div class="cs-visual reveal" aria-hidden="true">${c.visual}</div>
+      </header>
+      <section class="cs-metrics" aria-label="Key numbers">
+        ${c.metrics.map(([n, l]) => `<div class="cs-metric reveal"><b>${n}</b><span>${l}</span></div>`).join('')}
+      </section>
+      <section class="cs-section">
+        <p class="cs-label reveal">The challenge</p>
+        <h2 class="reveal">${c.challengeHead}</h2>
+        <p class="cs-body reveal">${c.challenge}</p>
+      </section>
+      <section class="cs-section">
+        <p class="cs-label reveal">My approach</p>
+        <div class="cs-steps">
+          ${c.steps.map(([h, t], i) => `<article class="cs-step reveal"><span>0${i + 1}</span><h3>${h}</h3><p>${t}</p></article>`).join('')}
+        </div>
+      </section>
+      <section class="cs-outcome reveal">
+        <p class="cs-label">Outcome</p>
+        <h2>${c.outcomeHead}</h2>
+        <p>${c.outcome}</p>
+      </section>
+      <a class="cs-next reveal" href="case-study.html?project=${nextKey}" data-tone="${next.tone}">
+        <span>Next project</span><b>${next.title}</b><i>›</i>
+      </a>`;
+
+    const items = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const io = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
+      items.forEach(el => io.observe(el));
+    } else items.forEach(el => el.classList.add('in'));
+  </script>
+</body>
+</html>

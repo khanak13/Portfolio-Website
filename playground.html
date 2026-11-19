@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Playground — Khanak Jain</title>
+  <meta name="description" content="Khanak's playground: a whiteboard for ideas, visitor sticky notes, and an ask-me terminal.">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=6">
+</head>
+<body class="board-page">
+  <div class="dock-sticky"><div class="mac-dock card"><a href="index.html" aria-label="Home"><svg class="dock-icon glyph-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M10 7h13v4H14v3h7v4h-7v3h9v4H10v-7h7v-2h-7z"/></svg></a><span class="dock-separator" aria-hidden="true"></span><a href="index.html#work" aria-label="Work"><svg class="dock-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4H10l2 2h6.5A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"/></svg></a><a href="playground.html" aria-label="Playground" aria-current="page"><svg class="dock-icon sparkle-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M13 3c1.2 6.1 3.1 8 9 9-5.9 1-7.8 2.9-9 9-1.2-6.1-3.1-8-9-9 5.9-1 7.8-2.9 9-9Z"/><path d="M24 18c.6 3.1 1.6 4.1 4.5 4.6-2.9.5-3.9 1.5-4.5 4.4-.6-2.9-1.6-3.9-4.5-4.4 2.9-.5 3.9-1.5 4.5-4.6Z"/><path d="M25 3c.4 2.1 1.1 2.8 3 3.1-1.9.4-2.6 1-3 2.9-.4-1.9-1.1-2.5-3-2.9 1.9-.3 2.6-1 3-3.1Z"/></svg></a><a href="index.html#about" aria-label="About"><svg class="dock-icon heart-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8.3-5.2-9.6-10.2C1.2 6.3 7 3.1 12 8c5-4.9 10.8-1.7 9.6 2.8C20.3 15.8 12 21 12 21Z"/></svg></a><a href="https://cal.com/khanak-jain" target="_blank" rel="noreferrer" aria-label="Book a meeting on Cal.com"><small id="dockWeekday">THU</small><b id="dockDay">19</b></a><a href="mailto:khanakj12@gmail.com" aria-label="Email Khanak"><svg class="dock-icon contact-icon" viewBox="0 0 24 24" aria-hidden="true"><rect class="contact-card" x="3" y="3" width="15" height="18" rx="3"/><circle class="contact-cutout" cx="10.5" cy="9" r="2.2"/><path class="contact-cutout" d="M6.6 17.5c.2-3 7.6-3 7.8 0v1H6.6z"/><circle class="contact-cutout" cx="21" cy="7" r="1.1"/><circle class="contact-cutout" cx="21" cy="12" r="1.1"/><circle class="contact-cutout" cx="21" cy="17" r="1.1"/></svg></a></div></div>
+
+  <main class="board-main">
+    <section class="whiteboard pg-board" aria-label="Playground whiteboard">
+      <div class="pg-heading">
+        <span>PLAYGROUND</span>
+        <h1>Ideas, side projects &amp; things I like.</h1>
+        <p>My little corner of the internet. Leave a sticky note — it stays until you close this tab.</p>
+      </div>
+
+      <div class="pg-canvas" id="pgCanvas">
+        <article class="pg-note">
+          <p>I think best on a whiteboard: messy arrows, sticky notes, and ideas I can move around. If that's how you think too, we're already friends.</p>
+          <span>— Khanak</span>
+        </article>
+
+        <div class="pg-visitor-notes" id="visitorNotes" aria-label="Your sticky notes"></div>
+
+        <section class="pg-terminal" id="pgTerminal" aria-label="Ask Khanak terminal">
+          <header class="term-bar">
+            <button class="term-light term-close" id="termClose" aria-label="Minimise terminal"></button><i class="term-light"></i><i class="term-light"></i>
+            <span>visitor@khanak — ask-khanak — zsh</span>
+          </header>
+          <div class="term-log" id="termLog" role="log" aria-live="polite">
+            <p class="term-dim">Last login: just now on ttys001</p>
+            <p>Welcome to <b>ask-khanak</b> <span class="term-badge">preview</span></p>
+            <p class="term-dim">An AI version of me is on its way. Until then, try a command below.</p>
+          </div>
+          <div class="term-chips" aria-label="Suggested commands">
+            <button type="button" data-cmd="help">help</button><button type="button" data-cmd="about">about</button><button type="button" data-cmd="projects">projects</button><button type="button" data-cmd="contact">contact</button><button type="button" data-cmd="clear">clear</button>
+          </div>
+          <form class="term-form" id="termForm" autocomplete="off">
+            <label for="termInput">visitor@khanak ~ %</label>
+            <input id="termInput" name="q" maxlength="200" spellcheck="false" placeholder="ask me anything…" enterkeyhint="send">
+            <button type="submit" aria-label="Send">↵</button>
+          </form>
+        </section>
+      </div>
+      <div class="pg-toolbar">
+        <button class="pg-add" id="addNote" type="button"><span aria-hidden="true">＋</span> Add a sticky note</button>
+        <button class="pg-reopen hidden" id="termReopen" type="button">Open terminal ›_</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const today = new Date();
+    document.getElementById('dockDay').textContent = today.getDate();
+    document.getElementById('dockWeekday').textContent = new Intl.DateTimeFormat('en', { weekday: 'short' }).format(today).toUpperCase();
+
+    // Drag to pan (desktop only; on small screens the board is a normal scrolling page).
+    const board = document.querySelector('.pg-board');
+    const canvas = document.getElementById('pgCanvas');
+    const canPan = matchMedia('(min-width: 900px) and (hover: hover)');
+    let offset = { x: 0, y: 0 }, drag = null;
+    const paint = () => {
+      canvas.style.transform = `translate3d(${offset.x}px, ${offset.y}px, 0)`;
+      board.style.backgroundPosition = `${offset.x}px ${offset.y}px`;
+    };
+    board.addEventListener('pointerdown', event => {
+      if (!canPan.matches || event.button !== 0 || event.target.closest('button, input, textarea, .pg-terminal, a')) return;
+      drag = { x: event.clientX - offset.x, y: event.clientY - offset.y };
+      board.setPointerCapture(event.pointerId);
+      board.classList.add('is-panning');
+    });
+    board.addEventListener('pointermove', event => {
+      if (!drag) return;
+      // Keep the board from being dragged out of sight.
+      offset = { x: Math.max(-500, Math.min(500, event.clientX - drag.x)), y: Math.max(-400, Math.min(300, event.clientY - drag.y)) };
+      requestAnimationFrame(paint);
+    });
+    const stop = () => { drag = null; board.classList.remove('is-panning'); };
+    board.addEventListener('pointerup', stop);
+    board.addEventListener('pointercancel', stop);
+
+
+    // Visitor sticky notes: kept in sessionStorage, so they survive a reload but vanish when the tab closes.
+    const NOTES_KEY = 'pg-notes', MAX_NOTES = 8, COLORS = ['yellow', 'pink', 'blue', 'green'];
+    const notesEl = document.getElementById('visitorNotes');
+    const addBtn = document.getElementById('addNote');
+    const loadNotes = () => { try { return JSON.parse(sessionStorage.getItem(NOTES_KEY)) || []; } catch { return []; } };
+    let notes = loadNotes();
+    const saveNotes = () => { try { sessionStorage.setItem(NOTES_KEY, JSON.stringify(notes)); } catch {} };
+    const renderNote = (note, index) => {
+      const el = document.createElement('div');
+      el.className = `pg-sticky pg-sticky--${COLORS[index % COLORS.length]}`;
+      // Lay notes out in a loose 4×2 grid on the empty left half of the board.
+      el.style.setProperty('--x', `${6 + (index % 4) * 11.5}%`);
+      el.style.setProperty('--y', `${470 + Math.floor(index / 4) * 175 + (index % 2) * 12}px`);
+      el.style.setProperty('--tilt', `${[-3, 2, -1.5, 3][index % 4]}deg`);
+      const text = document.createElement('textarea');
+      text.value = note;
+      text.maxLength = 160;
+      text.placeholder = 'Write something…';
+      text.setAttribute('aria-label', `Sticky note ${index + 1}`);
+      text.addEventListener('input', () => { notes[index] = text.value; saveNotes(); });
+      el.append(text);
+      notesEl.append(el);
+      return text;
+    };
+    notes.forEach(renderNote);
+    const syncAdd = () => { addBtn.disabled = notes.length >= MAX_NOTES; addBtn.lastChild.textContent = notes.length >= MAX_NOTES ? ' Board is full' : ' Add a sticky note'; };
+    syncAdd();
+    addBtn.addEventListener('click', () => {
+      if (notes.length >= MAX_NOTES) return;
+      notes.push('');
+      saveNotes();
+      renderNote('', notes.length - 1).focus();
+      syncAdd();
+    });
+
+    // Terminal chat UI. The chatbot itself is not built yet: askBot() is the one place to plug it in.
+    const log = document.getElementById('termLog');
+    const input = document.getElementById('termInput');
+    const COMMANDS = {
+      help: 'Commands: about · projects · contact · clear. Or just type a question — the AI version of me is coming soon.',
+      about: "I'm Khanak, an aspiring Product Manager at IIT Patna. I like understanding people, shaping ideas, and making products easier to use. Off-screen: dancing, painting, art and craft.",
+      projects: 'Focus (product discovery) · Cashfree Checkout (fintech) · Yellow.AI Nexus Loop (agentic AI) · Adobe AI editor (Inter IIT). Open them from the Work section on the home page.',
+      contact: 'khanakj12@gmail.com · linkedin.com/in/khanak--jain · book a call at cal.com/khanak-jain'
+    };
+    const line = (text, cls) => {
+      const p = document.createElement('p');
+      if (cls) p.className = cls;
+      p.textContent = text;
+      log.append(p);
+      log.scrollTop = log.scrollHeight;
+      return p;
+    };
+    // shortcut: canned reply, replace with a fetch to the chatbot API when it exists.
+    const askBot = question => new Promise(resolve => setTimeout(() => resolve("I'm still in training, so I can't answer that yet. Try 'help' — or email me and the real Khanak will reply."), 700));
+    const run = async raw => {
+      const text = raw.trim();
+      if (!text) return;
+      line(`visitor@khanak ~ % ${text}`, 'term-cmd');
+      const cmd = text.toLowerCase();
+      if (cmd === 'clear') { log.replaceChildren(); return; }
+      if (COMMANDS[cmd]) { line(COMMANDS[cmd]); return; }
+      const typing = line('thinking…', 'term-dim term-typing');
+      input.disabled = true;
+      const answer = await askBot(text);
+      typing.remove();
+      line(answer);
+      input.disabled = false;
+      input.focus();
+    };
+    document.getElementById('termForm').addEventListener('submit', event => { event.preventDefault(); run(input.value); input.value = ''; });
+    document.querySelectorAll('.term-chips button').forEach(button => button.addEventListener('click', () => run(button.dataset.cmd)));
+
+    const terminal = document.getElementById('pgTerminal');
+    const reopen = document.getElementById('termReopen');
+    document.getElementById('termClose').addEventListener('click', () => { terminal.classList.add('hidden'); reopen.classList.remove('hidden'); reopen.focus(); });
+    reopen.addEventListener('click', () => { terminal.classList.remove('hidden'); reopen.classList.add('hidden'); input.focus(); });
+  </script>
+</body>
+</html>
