@@ -1,0 +1,10 @@
+# keep secrets, originals and local tooling off Vercel (mirrors .gitignore)
+.env
+.env.*
+.DS_Store
+.claude/
+outputs/
+work/
+assets/khanak-eyes.heic
+assets/khanak-dance.mp4
+README.md
